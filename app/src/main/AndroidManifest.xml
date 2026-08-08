@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Needed for: downloading toolchain archives, and calling the
+         Anthropic / OpenAI / Ollama APIs from AiAssistantRepository. -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <!-- File access itself goes through the Storage Access Framework
+         (see MainActivity / EditorScreen's OpenDocumentTree launcher),
+         so no broad storage permission is requested. -->
+
+    <application
+        android:allowBackup="true"
+        android:label="DevLite Studio"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.DevLiteStudio">
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:windowSoftInputMode="adjustResize"
+            android:theme="@style/Theme.DevLiteStudio">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+</manifest>
